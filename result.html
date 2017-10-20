@@ -1,0 +1,182 @@
+<!doctype>
+<html lang="en">
+
+<head>
+    <title>
+        Vyny
+    </title>
+
+    <!-- stylesheet -->
+    <link href="css/style.results.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" type='text/css'>
+
+
+    <meta name="keywords" content="">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+
+<body>
+
+    <!-- *** OFERTA ***
+ ------------------------------------------------------->
+    <div style='display:none' id="top">
+        <div class="container">
+            <div class="col-md-6 offer" data-animate="fadeInDown">
+                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">OFERTA</a>
+                <div class="description-offer">
+                    <p>Nuevo tocadiscos disponible al 70% de descuento.</p>
+                </div>
+                <div class="tocadisco-offer">
+                    <p><a href="/index.html">Croley Wood Portable</a><button class="btn btn-primary derecha"><i class="fa fa-times" id="close"></i></button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- *** FIN DE OFERTA *** -->
+
+
+
+    <!-- *** FONDO ***
+ ------------------------------------------------------->
+
+
+    <div class='navegacion'>
+        <ul>
+            <li><a href="./index.html">Nuestra tienda</a></li>
+            <li><a class="active" href="./result.html">Búsqueda en la colección</a></li>
+            <li><a href="#about">Ofertas</a></li>
+        </ul>
+    </div>
+
+    <div class="fondo">
+        <div id="container">
+            <img src="img/logo.png">
+            <div class='sub'>
+                <h4>Nuestra colección</h4>
+            </div>
+        </div>
+        <div class="arrow"><img src="img/arrowsm.png"></div>
+    </div>
+
+
+    <!-- *** FONDO END *** -->
+
+    <!-- *** FILTROS ***
+ ------------------------------------------------------->
+    <header class="jumbotron text-center">
+        <p>Filtra tu búsqueda por</p>
+
+        <div class="form-inline">
+            <select id="byYear" class="form-control">
+        <option value="">Cualquier año</option>
+        <option value="1970">70's</option>
+        <option value="1980">80's</option>
+        <option value="1990">90's</option>
+        <option value="2000">2000 en adelante</option>
+      </select>
+
+
+            <select id="byPrice" class="form-control">
+        <option value="">Precio</option>
+        <option value="0-20">$0.00 - $20.00</option>
+        <option value="20-40">$20.00 - $40.00</option>
+        <option value="40-60">$40.00 - $60.00</option>
+        <option value="60-999999999">$60.00 +</option>
+      </select>
+
+            <select id="byGenre" class="form-control">
+        <option value="">Cualquier género</option>
+        <option value="ROCK">Rock</option>
+        <option value="POP">Pop</option>
+        <option value="HIP HOP">Hip Hop</option>
+        <option value="PUNK">Punk</option>
+        <option value="INDIE">Indie</option>
+        <option value="SOUNDTRACK">Soundtrack</option>
+      </select>
+
+            <select id="byFormat" class="form-control">
+        <option value="">Todos los formatos</option>
+        <option value="XLP">LP</option>
+        <option value="2XLP">2XLP</option>
+      </select>
+
+            <select id="byObject" class="form-control">
+        <option value="">Vinilos + Tocadiscos</option>
+        <option value="VINILO">Solo vinilos</option>
+        <option value="TOCADISCO">Solo tocadiscos</option>
+      </select>
+
+        </div>
+    </header>
+    <!-- *** FILTROS END *** -->
+
+
+    <!-- *** RESULTADOS *** -->
+    <div id="main">
+        <div class="contenedor"></div>
+    </div>
+
+    <!-- *** FOOTER ***
+ _________________________________________________________ -->
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <span><img src='img/logoSmall.png'></span>
+
+            <p class="footer-links">
+                <a href="#">Nuestra tienda</a>
+                <a href="#">Colección</a>
+                <a href="#">Ofertas</a>
+                <p class="footer-company-name">Vyny &copy; 2017</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Universidad Icesi</span> Cali, Colombia</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 555 123456</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">contact@vyny.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>Sobre VYNY</span>Nuestra selección de vinilos y tocadiscos con nuevas características, nuevos lanzamientos, UO-ediciones exclusivas y los re-estrenos que todos hemos estado esperando.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- *** FOOTER END *** -->
+
+    <!-- /#HTML END -->
+
+    <script src="js/data.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+
+</html>

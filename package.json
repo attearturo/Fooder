@@ -1,0 +1,22 @@
+{
+  "name": "fooder",
+  "version": "1.0.0",
+  "description": "Proyecto de HCI ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attearturo/Fooder.git"
+  },
+  "author": "Arturo Gomez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/attearturo/Fooder/issues"
+  },
+  "homepage": "https://github.com/attearturo/Fooder#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
