@@ -141,6 +141,54 @@ button {
     }
 }
 
+
+    .navegacion {
+        position: absolute;
+        width: 100%;
+        margin: 20px;
+    }
+    
+    ul {
+        margin-top: 5px;
+        border: none;
+        position: absolute;
+        width: 100%;
+        z-index: 5;
+        list-style-type: none;
+        padding: 0;
+        overflow: hidden;
+        background-color: transparent;
+
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: #c1c1c1;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    li a:hover:not(.active) {
+        background-color: transparent;
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+    }
+
+    li a.active {
+        color: white;
+        background-color: transparent;
+        text-decoration: none;
+        border: 3px solid white;
+    }
+
+
 .jumbotron {
     font-family: 'Poppins', sans-serif;
     margin: 00px 0px 0px 0px;

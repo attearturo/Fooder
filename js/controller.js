@@ -1,6 +1,5 @@
 var controller = function controller(vista, data) {
     
-    view.boxLoading();
     view.closeAdd();
 
     view.onFilter = function onFilter(filterYear, filterGenre, filterPrice, filterFormat, filterObject) {
@@ -54,6 +53,14 @@ var controller = function controller(vista, data) {
 
         // renderizamos con la variable librosFiltrados
         view.render(vinilosFiltrados);
+    }
+
+    view.ordenar = function ordenar() {
+        var vinilosOrdenados = data
+            .sort(function(a,b){
+                return a.precio - b.precio;
+            });
+             view.render(vinilosOrdenados);
     }
 
     // render inicial con todos los libros

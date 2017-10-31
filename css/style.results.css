@@ -26,40 +26,8 @@
         font-size: 40px;
         font-family: 'Poppins', sans-serif;
     }
-
-    #boxLoading {
-        width: 50px;
-        height: 50px;
-        z-index: 10;
-        margin: auto;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        &:before {
-            content: '';
-            width: 50px;
-            height: 5px;
-            background: #000;
-            opacity: 0.1;
-            position: absolute;
-            top: 59px;
-            left: 0;
-            border-radius: 50%;
-            animation: shadow .5s linear infinite;
-        }
-        &:after {
-            content: '';
-            width: 50px;
-            height: 50px;
-            background: white;
-            animation: animate .5s linear infinite;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 3px;
-        }
+    .jumbotron{
+        height: 100vh;
     }
 
     @keyframes animate {
@@ -91,11 +59,12 @@
         }
     }
 
-.navegacion{
-    position: absolute;
-    width: 100%;
-    margin: 20px;
-}
+    .navegacion {
+        position: absolute;
+        width: 100%;
+        margin: 20px;
+    }
+
     ul {
         margin-top: 5px;
         border: none;
@@ -247,23 +216,23 @@
         line-height: 0.5;
     }
 
-.logoCentro{
+    .logoCentro {
         margin: auto;
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
-}
+    }
 
-.sub{
-    text-align: center;
-    border: 3px solid white;
-    width: 200px;
-    margin: auto;
-    
-    
-}
+    .sub {
+        text-align: center;
+        border: 3px solid white;
+        width: 200px;
+        margin: auto;
+
+
+    }
 
     .intro {
         position: relative;
@@ -284,7 +253,7 @@
         font-size: 23;
         text-align: left;
         margin: 100% 10%;
-        
+
     }
 
     .intro .infoText {
@@ -318,6 +287,25 @@
     .main {
         image-resolution: snap;
         align-items: center;
+    }
+
+    #byGenre {
+        width: 350px;
+    }
+    #byPrice {
+        width: 350px;
+    }
+    #agradable {
+        width: 350px;
+    }
+    #byFormat {
+        width: 350px;
+    }
+    #byObject {
+        width: 350px;
+    }
+    #byFood {
+        width: 350px;
     }
 
     .form-control {
@@ -471,14 +459,14 @@
 
     }
 
-@-webkit-keyframes aparece {
-    from {
-        opacity: 0;
+    @-webkit-keyframes aparece {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
-    to{
-        opacity: 1;
-    }
-}
 
 
     #copyright p {
@@ -489,3 +477,23 @@
         margin: auto;
     }
 
+
+/* Default setup */
+.radio, .checkbox, .checkbox-toggle {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+/* UL container elements */
+ul.radio, ul.checkbox {
+  display: block;
+  list-style: none;
+}
+
+ul.radio.horizontal > li,
+ul.checkbox.horizontal > li {
+  display: inline-block;
+  padding-top: 0;
+  margin-right: .5em;
+}

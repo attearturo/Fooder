@@ -1,15 +1,6 @@
 var view = {
 
-    boxLoading: function boxLoading() {
-        setTimeout(function () {
-            document.querySelector('#boxLoading').style.opacity = 0;
-        }, 4000);
-
-        setTimeout(function () {
-            document.querySelector('#boxLoading').style.display = 'none';
-        }, 5000);
-    },
-
+  
     // seleccionamos el nuevo cerrar y agrega un eventListener
     closeAdd: function closeAdd() {
         document.querySelector('#close').addEventListener("click", function () {
@@ -135,6 +126,8 @@ var view = {
         div.setAttribute('class', 'row');
 
         var that = this;
+
+
         listaVinilos.forEach(function (infoVinilo) {
             var li = that.getElemVinilo(infoVinilo);
             div.appendChild(li);
@@ -148,7 +141,7 @@ var view = {
         var header = document.querySelector('header');
 
         var that = this;
-        var filterByYear = header.querySelector('#byYear');
+        var filterByYear = header.querySelector('#agradable');
         var filterByGenre = header.querySelector('#byGenre');
         var filterByPrice = header.querySelector('#byPrice');
         var filterByFormat = header.querySelector('#byFormat');
@@ -156,6 +149,7 @@ var view = {
 
         var handler = function () {
             that.onFilter(filterByYear.value, filterByGenre.value, filterByPrice.value, filterByFormat.value, filterByObject.value);
+            that.ordenar();
         }
 
         filterByYear.addEventListener('change', handler);
@@ -163,6 +157,8 @@ var view = {
         filterByPrice.addEventListener('change', handler);
         filterByFormat.addEventListener('change', handler);
         filterByObject.addEventListener('change', handler);
+
+
 
     },
 
