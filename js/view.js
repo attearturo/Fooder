@@ -12,16 +12,17 @@ var view = {
     // genera cada oferta extrayendo sus datos del Modelo
     getElemVinilo: function getElemVinilo(infoVinilo) {
         var div = document.createElement('div');
-        div.setAttribute('class', 'col-md-3');
+        div.setAttribute('class', 'col-md-6');
         div.innerHTML = `
         <div class="lista">
-			<img class="imagen" style="width:100%" src="${infoVinilo.ruta}" class="img-responsive"/>
+			<img class="imagen" style="width:100%" src="restaurantes/${infoVinilo.imagen}" class="img-responsive"/>
 			<div class="middle">
-            <button><h4 class="text">Ver más</h4></button>
+            <button><h4 class="text">RESERVAR</h4></button>
             </div>
-            <h4>${infoVinilo.nombre}</h4>
-			<p>${infoVinilo.ano} // ${infoVinilo.genero}</p>
-			<h4 class="colorPrice"><strong>$ ${infoVinilo.precio}</strong></h4>
+            <h4><Strong>${infoVinilo.nombre}</Strong></h4>
+			<p>${infoVinilo.direccion}</p>
+			<p>Precio promedio $ ${infoVinilo.direccion}</p>
+			<h4 class="colorPrice">Valoración <strong>${infoVinilo.ranking}</strong> (${infoVinilo.review} votos) </h4>
         </div>
 		`;
         var that = this;
@@ -49,24 +50,27 @@ var view = {
                 <div class='modal-header'>
                     <button type='button' class='closeView' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
                     <h3 class='title'>${infoVinilo.nombre}</h3>             
-                    <h4 class="colorPrice"><strong>$ ${infoVinilo.precio}</strong></h4>  
+                    <h4 class="colorPrice">Precio Promedio<strong>$ ${infoVinilo.precio}</strong></h4>  
                 </div>
 
                 <div class='modal-body'>
-                    <div class='col-md-6'>
-                        <img class="imagen " style="width:100%" src="${infoVinilo.ruta}" class="img-responsive" />
+                    <div class='col-md-12'>
+                        <img class="imagen " style="width:100%" src="restaurantes/${ infoVinilo.imagen = null ? "predeterminado.png" : infoVinilo.imagen }" class="img-responsive" />
                     </div>
 
-                    <div class='col-md-6'>
-                        <p><Strong>Detalles</Strong>
-                        </p><p>${infoVinilo.referencia}</p>
+                    <div class='col-md-12'>
+                        <br><p><Strong>Detalles</Strong>
+                        </p><p>${infoVinilo.descripcion}</p>
 
-<div class='line'>                       
-<p>Formato: <Strong>${infoVinilo.formato}</Strong></p>
-<p>Categoria: <Strong>${infoVinilo.genero}</Strong></p>
-<p>Lanzamiento: <Strong>${infoVinilo.ano}</Strong></p>
-</div>
-<p>${infoVinilo.descripcion}</p>
+                        <div class='line'>                       
+                        <p>Dirección: <Strong>${infoVinilo.direccion}</Strong></p>
+                        <p>Telefonos: <Strong>${infoVinilo.phone}</Strong></p>
+                        <p>Tiempo promedio de estadia: <Strong>${infoVinilo.tiempo}</Strong></p>
+                        </div>
+                        <p>Especialidad: <Strong>${infoVinilo.especialidad}</Strong></p>
+                        <div class='col-md-6'>
+                        <img class="imagen " style="width:100%" src="restaurantes/${ infoVinilo.imagen = null ? "predeterminado.png" : infoVinilo.imagen }" class="img-responsive" />
+                    </div>
                     </div>
                 </div>
             </div>
@@ -110,12 +114,12 @@ var view = {
 
 
     // muestra en tiempo real la cantidad de resultados antes y despues de aplicar filtros
-    getResults: function getResults(cantidad) {
+    getResults: function getResults(listaVinilos) {
         var div = document.createElement('div');
         div.setAttribute('class', 'col-md-12');
         div.innerHTML = `
         <div class="resultados">
-			<p>${cantidad.length} resultados</p>
+			<p>${listaVinilos.length} resultados</p>
         </div>
 		`;
         return div;
@@ -126,7 +130,6 @@ var view = {
         div.setAttribute('class', 'row');
 
         var that = this;
-
 
         listaVinilos.forEach(function (infoVinilo) {
             var li = that.getElemVinilo(infoVinilo);
@@ -149,7 +152,6 @@ var view = {
 
         var handler = function () {
             that.onFilter(filterByYear.value, filterByGenre.value, filterByPrice.value, filterByFormat.value, filterByObject.value);
-            that.ordenar();
         }
 
         filterByYear.addEventListener('change', handler);
@@ -158,8 +160,15 @@ var view = {
         filterByFormat.addEventListener('change', handler);
         filterByObject.addEventListener('change', handler);
 
+    },
 
+    ordenar: function ordenar(listaVinilos) {
+        var that = this;
+        listaVinilos.sort(function(elemento,elemento){
+                return elemento.puntos - elemento.puntos;
+            });
 
+        return listaVinilos;
     },
 
     render: function render(listaVinilos) {
@@ -168,6 +177,8 @@ var view = {
         main.setAttribute('class', 'container');
 
         var elemVinilos = this.getElemVinilos(listaVinilos);
+        // elemVinilos.ordenar(elemVinilos);
+
         var tamLista = this.getResults(listaVinilos);
 
         main.innerHTML = '';

@@ -2,6 +2,7 @@ var controller = function controller(vista, data) {
     
     view.closeAdd();
 
+
     view.onFilter = function onFilter(filterYear, filterGenre, filterPrice, filterFormat, filterObject) {
 
         var vinilosFiltrados = data
@@ -20,6 +21,9 @@ var controller = function controller(vista, data) {
                 if (!filterGenre) return true;
                 // si no, retornamos el resultado de la comparación
                 return elemento.genero.includes(filterGenre);
+                if(elemento.genero.includes(filterGenre)){
+                    elemento.puntos += 1;
+                }
             })
 
             //filtro por precio
@@ -55,13 +59,13 @@ var controller = function controller(vista, data) {
         view.render(vinilosFiltrados);
     }
 
-    view.ordenar = function ordenar() {
-        var vinilosOrdenados = data
-            .sort(function(a,b){
-                return a.precio - b.precio;
-            });
-             view.render(vinilosOrdenados);
-    }
+    // view.onOrdenar = function onOrdenar(elemento) {
+    //     var vinilosOrdenados = data
+    //     .sort(function(elemento,elemento){
+    //             return elemento.puntos - elemento.puntos;
+    //         });
+    //     view.render(vinilosOrdenados);
+    // }
 
     // render inicial con todos los libros
     view.render(data);

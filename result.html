@@ -57,14 +57,6 @@
 
 
         <h5>¿Que tal el ambiente?</h5>
-        <ul class="checkbox horizontal">
-            <li><input type="checkbox" id="cb4h" /><label for="cb4h">Donuts</label>
-            </li>
-            <li><input type="checkbox" id="cb5h" /><label for="cb5h">Coffee</label>
-            </li>
-            <li><input type="checkbox" id="cb6h" /><label for="cb6h"></label>
-            </li>
-        </ul>
 
         <div class="form-inline">
             <select id="agradable" class="form-control">
@@ -181,6 +173,19 @@
         <script src="js/data.js"></script>
         <script src="js/view.js"></script>
         <script src="js/controller.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDmFoDExbaLNWePwLQ1pGsyhl3_kh46efA",
+    authDomain: "fooderhci.firebaseapp.com",
+    databaseURL: "https://fooderhci.firebaseio.com",
+    projectId: "fooderhci",
+    storageBucket: "fooderhci.appspot.com",
+    messagingSenderId: "832312219816"
+  };
+  firebase.initializeApp(config);
+</script>
     </body>
 
     </html>

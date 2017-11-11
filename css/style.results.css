@@ -27,7 +27,7 @@
         font-family: 'Poppins', sans-serif;
     }
     .jumbotron{
-        height: 100vh;
+        /*height: 100vh;*/
     }
 
     @keyframes animate {
@@ -244,8 +244,12 @@
         text-align: center;
         font-family: 'Poppins', sans-serif;
         color: black;
-        line-height: 0.5;
+        line-height: 1;
     }
+p{
+    
+        line-height: 1.2;
+}
 
     .intro .info {
         position: absolute;
@@ -468,7 +472,6 @@
         }
     }
 
-
     #copyright p {
         margin: 0;
     }
@@ -477,23 +480,22 @@
         margin: auto;
     }
 
+    /* Default setup */
+    .radio, .checkbox, .checkbox-toggle {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+  }
 
-/* Default setup */
-.radio, .checkbox, .checkbox-toggle {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-}
+  /* UL container elements */
+  ul.radio, ul.checkbox {
+      display: block;
+      list-style: none;
+  }
 
-/* UL container elements */
-ul.radio, ul.checkbox {
-  display: block;
-  list-style: none;
-}
-
-ul.radio.horizontal > li,
-ul.checkbox.horizontal > li {
-  display: inline-block;
-  padding-top: 0;
-  margin-right: .5em;
-}
+  ul.radio.horizontal > li,
+  ul.checkbox.horizontal > li {
+      display: inline-block;
+      padding-top: 0;
+      margin-right: .5em;
+  }
