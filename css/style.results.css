@@ -26,7 +26,8 @@
         font-size: 40px;
         font-family: 'Poppins', sans-serif;
     }
-    .jumbotron{
+
+    .jumbotron {
         /*height: 100vh;*/
     }
 
@@ -234,6 +235,21 @@
 
     }
 
+.recomendar{
+    display: block;
+    padding: 15px;
+    border: none;
+    color: gray;
+    margin-top: 10px;
+    font-size: 17pt;
+    width: 100%;
+}
+
+.recomendar:hover{
+    background-color: dodgerblue;
+    color: white;
+}
+
     .intro {
         position: relative;
         height: 100vh;
@@ -246,10 +262,11 @@
         color: black;
         line-height: 1;
     }
-p{
-    
+
+    p {
+
         line-height: 1.2;
-}
+    }
 
     .intro .info {
         position: absolute;
@@ -296,18 +313,23 @@ p{
     #byGenre {
         width: 350px;
     }
+
     #byPrice {
         width: 350px;
     }
+
     #agradable {
         width: 350px;
     }
+
     #byFormat {
         width: 350px;
     }
+
     #byObject {
         width: 350px;
     }
+
     #byFood {
         width: 350px;
     }
@@ -438,7 +460,7 @@ p{
             top: 45%;
         }
 
-        .modal-body .imagen {
+        .modal-body .imagenMini {
             display: none;
         }
 
@@ -481,21 +503,26 @@ p{
     }
 
     /* Default setup */
-    .radio, .checkbox, .checkbox-toggle {
-      display: inline-block;
-      padding: 0;
-      margin: 0;
-  }
 
-  /* UL container elements */
-  ul.radio, ul.checkbox {
-      display: block;
-      list-style: none;
-  }
+    .radio,
+    .checkbox,
+    .checkbox-toggle {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
 
-  ul.radio.horizontal > li,
-  ul.checkbox.horizontal > li {
-      display: inline-block;
-      padding-top: 0;
-      margin-right: .5em;
-  }
+    /* UL container elements */
+
+    ul.radio,
+    ul.checkbox {
+        display: block;
+        list-style: none;
+    }
+
+    ul.radio.horizontal > li,
+    ul.checkbox.horizontal > li {
+        display: inline-block;
+        padding-top: 0;
+        margin-right: .5em;
+    }

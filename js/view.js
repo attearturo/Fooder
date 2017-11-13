@@ -1,6 +1,14 @@
+var puntajeGlobal = {
+        precio: "",
+        cercania: "",
+        creatividad: "",
+        tranquilidad: "",
+        informalidad: "",
+        comida: [0,0,0,0,0,0,0,0,0,0]
+    };
+
 var view = {
 
-  
     // seleccionamos el nuevo cerrar y agrega un eventListener
     closeAdd: function closeAdd() {
         document.querySelector('#close').addEventListener("click", function () {
@@ -69,7 +77,7 @@ var view = {
                         </div>
                         <p>Especialidad: <Strong>${infoVinilo.especialidad}</Strong></p>
                         <div class='col-md-6'>
-                        <img class="imagen " style="width:100%" src="restaurantes/${ infoVinilo.imagen = null ? "predeterminado.png" : infoVinilo.imagen }" class="img-responsive" />
+                        <img class="imagenMini" style="width:100%" src="restaurantes/${ infoVinilo.imagen = null ? "predeterminado.png" : infoVinilo.imagen }" class="img-responsive" />
                     </div>
                     </div>
                 </div>
@@ -110,9 +118,6 @@ var view = {
         return div;
     },
 
-
-
-
     // muestra en tiempo real la cantidad de resultados antes y despues de aplicar filtros
     getResults: function getResults(listaVinilos) {
         var div = document.createElement('div');
@@ -130,7 +135,6 @@ var view = {
         div.setAttribute('class', 'row');
 
         var that = this;
-
         listaVinilos.forEach(function (infoVinilo) {
             var li = that.getElemVinilo(infoVinilo);
             div.appendChild(li);
@@ -140,44 +144,28 @@ var view = {
     },
 
     setHeaderEvents: function setHeaderEvents() {
-        // cambiamos createElement por querySelector
+        
+        var that = this;       
         var header = document.querySelector('header');
+        
+        puntajeGlobal.precio = header.querySelector('#precio');
+        puntajeGlobal.cercania = header.querySelector('#cercania');
+        puntajeGlobal.creatividad = header.querySelector('#creatividad');
+        puntajeGlobal.tranquilidad = header.querySelector('#tranquilidad');
+        puntajeGlobal.informalidad = header.querySelector('#informalidad');
 
-        var that = this;
-        var filterByYear = header.querySelector('#agradable');
-        var filterByGenre = header.querySelector('#byGenre');
-        var filterByPrice = header.querySelector('#byPrice');
-        var filterByFormat = header.querySelector('#byFormat');
-        var filterByObject = header.querySelector('#byObject');
-
-        var handler = function () {
-            that.onFilter(filterByYear.value, filterByGenre.value, filterByPrice.value, filterByFormat.value, filterByObject.value);
-        }
-
-        filterByYear.addEventListener('change', handler);
-        filterByGenre.addEventListener('change', handler);
-        filterByPrice.addEventListener('change', handler);
-        filterByFormat.addEventListener('change', handler);
-        filterByObject.addEventListener('change', handler);
-
-    },
-
-    ordenar: function ordenar(listaVinilos) {
-        var that = this;
-        listaVinilos.sort(function(elemento,elemento){
-                return elemento.puntos - elemento.puntos;
-            });
-
-        return listaVinilos;
+        var btnRecomendar = header.querySelector('.recomendar');
+        btnRecomendar.addEventListener('click', function(){
+            that.ordenar();
+            that.sumarPuntaje(puntajeGlobal);
+        });
     },
 
     render: function render(listaVinilos) {
-
         var main = document.getElementById('main');
         main.setAttribute('class', 'container');
 
         var elemVinilos = this.getElemVinilos(listaVinilos);
-        // elemVinilos.ordenar(elemVinilos);
 
         var tamLista = this.getResults(listaVinilos);
 

@@ -1,73 +1,62 @@
 var controller = function controller(vista, data) {
-    
+
     view.closeAdd();
 
+    view.sumarPuntaje = function sumarPuntaje(puntajeGlobal) {
 
-    view.onFilter = function onFilter(filterYear, filterGenre, filterPrice, filterFormat, filterObject) {
+        var Precio = puntajeGlobal.precio.value;
+        var Cercania = puntajeGlobal.cercania.value;
+        var Tranquilidad = puntajeGlobal.tranquilidad.value;
+        var Creatividad = puntajeGlobal.creatividad.value;
+        var Informalidad = puntajeGlobal.informalidad.value;
 
-        var vinilosFiltrados = data
+        console.log(
+            'Precio: ' + Precio +
+            ' Cercania: ' + Cercania +
+            ' Creatividad: ' + Tranquilidad +
+            ' Tranquilidad: ' + Creatividad +
+            ' Informalidad: ' + Informalidad
+        )
 
-            //filtro por año
-            .filter(function (elemento) {
-                // si filterYear está vacío retornamos true
-                if (!filterYear) return true;
-                // si no, retornamos el resultado de la comparación
-                return elemento.ano > filterYear;
-            })
-
-            //filtro por genero
-            .filter(function (elemento) {
-                // si filterYear está vacío retornamos true
-                if (!filterGenre) return true;
-                // si no, retornamos el resultado de la comparación
-                return elemento.genero.includes(filterGenre);
-                if(elemento.genero.includes(filterGenre)){
-                    elemento.puntos += 1;
-                }
-            })
-
-            //filtro por precio
-            .filter(function (elemento) {
-                // si filterYear está vacío retornamos true
-                if (!filterPrice) return true;
-
-                // como el valor de filterPages es un rango separado por un guión, 
-                // utilizamos la función split para acceder a los 2 valores
-                var rango = filterPrice.split("-");
-
-                // retornamos el resultado de la comparación
-                return elemento.precio >= rango[0] && elemento.precio < rango[1];
-            })
-        
-            //filtro por genero
-            .filter(function (elemento) {
-                // si filterYear está vacío retornamos true
-                if (!filterFormat) return true;
-                // si no, retornamos el resultado de la comparación
-                return elemento.formato.includes(filterFormat);
-            })
-        
-        //filtro por genero
-            .filter(function (elemento) {
-                // si filterYear está vacío retornamos true
-                if (!filterObject) return true;
-                // si no, retornamos el resultado de la comparación
-                return elemento.tipo.includes(filterObject);
-            });
+        var puntajeSumado = data.forEach(function (elemento) {
+            
+            if (elemento.barato < Precio) {
+                console.log('Precio más barato');
+                elemento.ranking += 1;
+            }
+            
+            
+            if (elemento.creativo < Creatividad) {
+                console.log('Suma en creatividad');
+                elemento.ranking += 1;
+            }
+            
+            
+            if (elemento.tranquiilo < Tranquilidad) {
+                console.log('Suma en tranquilidad');
+                elemento.ranking += 1;
+            }
+            
+            
+            if (elemento.agradable < Informalidad) {
+                console.log('Suma en tranquilidad');
+                elemento.ranking += 1;
+            }
+        });
 
         // renderizamos con la variable librosFiltrados
-        view.render(vinilosFiltrados);
+        view.render(puntajeSumado);
     }
 
-    // view.onOrdenar = function onOrdenar(elemento) {
-    //     var vinilosOrdenados = data
-    //     .sort(function(elemento,elemento){
-    //             return elemento.puntos - elemento.puntos;
-    //         });
-    //     view.render(vinilosOrdenados);
-    // }
+    view.ordenar = function ordenar() {
+        var listaOrdenada = data
+            .sort(function (a, b) {
+                return a.ranking > b.ranking;
+            }).reverse();
+        view.render(listaOrdenada);
+    }
 
-    // render inicial con todos los libros
+    // render inicial
     view.render(data);
     // llamamos a setHeaderEvents
     view.setHeaderEvents();
