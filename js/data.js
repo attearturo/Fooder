@@ -2,7 +2,7 @@ var data =[
  {
    "nombre": "Mister Wings",
    "descripcion": "Es uno de los típicos restaurantes americanos que aparecen en las películas, donde la gente disfruta de eventos deportivos y la mejor música americana en vídeo de los 80′s, 90′s y actual.",
-   "especialidad": "pollo o alitas,comida internacional",
+   "especialidad": "Pollo o alitas,Carnes y parrillas",
    "precio": 30.5,
    "direccion": "Cra 105 #14 – 05, Segundo Piso, Cali, ciudad jardin",
    "ranking": 4.5,
@@ -19,7 +19,7 @@ var data =[
  {
    "nombre": "Cheff Burguer",
    "descripcion": "Ubicados en la calle de restaurantes de Ciudad Jardín en el sector sur de la ciudad, a media cuadra del lago de la Babilla; un local rodeado de árboles y con un deck al aire libre que invita a pasar un rato muy chevere y tomarse un cerveza bien fría en medio del delicioso clima Caleño.",
-   "especialidad": "hamburguesa",
+   "especialidad": "Hamburguesa",
    "precio": 25.7,
    "direccion": "Cra 3ra con Calle 1 Oeste, esquina, El Peñon",
    "ranking": 4.6,
@@ -36,7 +36,7 @@ var data =[
  {
    "nombre": "Cuuc ",
    "descripcion": "Buscamos Satisfacer el paladar exquisito de nuestros amigos con nuestro amplio menu para todos los gustos ",
-   "especialidad": "comida internacional",
+   "especialidad": "Bebidas sin alcohol",
    "precio": 19.2,
    "direccion": "Cra. 105 No. 14-250 Local 3-A - Ciudad Jardín - Cali",
    "ranking": 4.6,
@@ -53,7 +53,7 @@ var data =[
  {
    "nombre": "Macondo: Desserts & Coffee",
    "descripcion": "Somos un lugar tranquilo para aprender y enamorarse del buen Café, disfrutarás nuestro amor por el Jazz y el Blues. Tambien podrás disfrutar de buen cine gratuito y música en vivo los sábados.",
-   "especialidad": "bebidas sin alcohol",
+   "especialidad": "Bebidas sin alcohol",
    "precio": 26.8,
    "direccion": "Carrera 6 #3-03 - San Antonio - Cal",
    "ranking": 4.6,
@@ -70,7 +70,7 @@ var data =[
  {
    "nombre": "La Sevillana ",
    "descripcion": "En nuestras parrillas encontrará tipos de corte de carne reconocidos y otros propios que como expertos en carnes nos sentimos orgullosos de ofrecer para el deleite de nuestros clientes.",
-   "especialidad": "carnes y parrillas",
+   "especialidad": "Carnes y parrillas",
    "precio": 30.6,
    "direccion": "Carrera 105 No. 15A - 43 - Ciudad Jardín - Cali",
    "ranking": 4.5,
@@ -87,7 +87,7 @@ var data =[
  {
    "nombre": "Cheers",
    "descripcion": "¡Para los amantes de la pizza, un excelente producto! <br>En un lugar cálido y tranquilo, perfecto para compartir en familia y con amigos.",
-   "especialidad": "pizza",
+   "especialidad": "Pizza",
    "precio": 23.6,
    "direccion": "Carrera 34 Nro. 3-70, Parque del Perro - San Fernando Viejo - Cali",
    "ranking": 4.5,
@@ -104,7 +104,7 @@ var data =[
  {
    "nombre": "Sushi Green",
    "descripcion": "Parrilla tradicional japonesa de calor indirecto y piedra volcánica. Su técnica de cocción lenta en el fuego permite disfrutar verduras, carnes, pescados y todo tipo de mariscos frescos asados a la parrilla.",
-   "especialidad": "sushi",
+   "especialidad": "Sushi",
    "precio": 32.8,
    "direccion": "Cra. 103, Cali, Valle del Cauca",
    "ranking": 4.6,
@@ -121,7 +121,7 @@ var data =[
  {
    "nombre": "Dominos Pizza",
    "descripcion": "Domino’s Pizza es reconocida como líder mundial en entrega de pizza y opera una red de tiendas propias y en franquicia en los Estados Unidos y en mercados internacionales.",
-   "especialidad": "pizza",
+   "especialidad": "Pizza",
    "precio": 24,
    "direccion": "Cl. 18 #117-25, Cali, Valle del Cauca",
    "ranking": 4.1,
@@ -138,7 +138,7 @@ var data =[
  {
    "nombre": "La Comitiva",
    "descripcion": "Compartir con los amigos alrededor de un buen plato de comida es el mayor de los placeres.",
-   "especialidad": "comida italiana",
+   "especialidad": "Comida italiana",
    "precio": 61.2,
    "direccion": "Calle 4 No. 34 -32 - San Fernando - Cali",
    "ranking": 4.5,
@@ -155,7 +155,7 @@ var data =[
  {
    "nombre": "The Famous Absurdo",
    "descripcion": "Abrimos todos los días desde las 11:30 am",
-   "especialidad": "parrilla internacional",
+   "especialidad": "Carnes y parrillas",
    "precio": 37,
    "direccion": "Carrera 122 Nro18-1, C.C. Carrulla, local 12 - Pance - Cali",
    "ranking": 4.5,

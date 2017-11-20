@@ -6,43 +6,54 @@ var controller = function controller(vista, data) {
     view.ordenar = function ordenar(puntajeGlobal) {
         
         var Precio = puntajeGlobal.precio.value;
-        var Cercania = puntajeGlobal.cercania.value;
+        var Zona = puntajeGlobal.zona.value;
         var Tranquilidad = puntajeGlobal.tranquilidad.value;
         var Creatividad = puntajeGlobal.creatividad.value;
         var Informalidad = puntajeGlobal.informalidad.value;
+        var Comida = puntajeGlobal.comida.value;
 
         console.log(
-            'Precio: ' + Precio +
-            ' Cercania: ' + Cercania +
+            ' Precio: ' + Precio +
+            ' Zona: ' + Zona +
             ' Creatividad: ' + Creatividad +
             ' Tranquilidad: ' + Tranquilidad +
-            ' Informalidad: ' + Informalidad
+            ' Informalidad: ' + Informalidad +
+            ' Comida: ' + Comida
         )
 
         var sumar = data.forEach(function (elemento) {
             elemento.puntaje = 0;
-            
-            if (elemento.creatividad < Precio) {
+
+            var rango = Precio.split("-");
+            if (elemento.precio >= rango[0] && elemento.precio < rango[1]) {
                 elemento.puntaje += 1;
             }
             
-            if (elemento.creatividad < Creatividad) {
+            if (Zona.includes(elemento.zona)) {
                 elemento.puntaje += 1;
             }            
             
-            if (elemento.tranquilidad < Tranquilidad) {
+            if (elemento.tranquilidad <= Tranquilidad) {
                 elemento.puntaje += 1;
             }            
             
-            if (elemento.formalismo < Informalidad) {
+            if (elemento.formalismo <= Informalidad) {
                 elemento.puntaje += 1;
             }
+
+            if (elemento.formalismo <= Informalidad) {
+                elemento.puntaje += 1;
+            }
+
+            var menuComida = elemento.especialidad.split(",");
+            menuComida.forEach(function(tipo){
+                if (Comida.includes(tipo)) {
+                    elemento.puntaje += 1;
+                }   
+            });
             
             elemento.puntaje += elemento.ranking;
-
-            var puntajes = [];
-            puntajes= data.puntaje;
-            console.log(puntajes);
+            console.log(elemento.puntaje);
         });
         
         var listaOrdenada = data
