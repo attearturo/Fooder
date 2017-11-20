@@ -6,7 +6,6 @@ var puntajeGlobal = {
         informalidad: "",
         comida: [0,0,0,0,0,0,0,0,0,0]
     };
-
 var view = {
 
     // seleccionamos el nuevo cerrar y agrega un eventListener
@@ -145,20 +144,21 @@ var view = {
 
     setHeaderEvents: function setHeaderEvents() {
         
-        var that = this;       
+        var that = this; 
+
         var header = document.querySelector('header');
-        
         puntajeGlobal.precio = header.querySelector('#precio');
         puntajeGlobal.cercania = header.querySelector('#cercania');
         puntajeGlobal.creatividad = header.querySelector('#creatividad');
         puntajeGlobal.tranquilidad = header.querySelector('#tranquilidad');
         puntajeGlobal.informalidad = header.querySelector('#informalidad');
 
+        that.ordenar(puntajeGlobal);
         var btnRecomendar = header.querySelector('.recomendar');
         btnRecomendar.addEventListener('click', function(){
-            that.ordenar();
-            that.sumarPuntaje(puntajeGlobal);
+            that.ordenar(puntajeGlobal);
         });
+        
     },
 
     render: function render(listaVinilos) {

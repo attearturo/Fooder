@@ -11,12 +11,10 @@ var data =[
    "tiempo": "1 a 2 horas",
    "zona": "Sur",
    "imagen": "wings.png",
-   "tradicional": 3,
-   "creativo": 2,
-   "animado": 4,
-   "tranquiilo": 2,
-   "barato": 3,
-   "agradable": 3
+   "creatividad": 3,
+   "tranquilidad": 2,
+   "formalismo": 4,
+   "puntaje": 0
  },
  {
    "nombre": "Cheff Burguer",
@@ -30,12 +28,10 @@ var data =[
    "tiempo": "45 min a 1.5 horas",
    "zona": "Sur",
    "imagen": "chef.png",
-   "tradicional": 4,
-   "creativo": 3,
-   "animado": 3,
-   "tranquiilo": 2,
-   "barato": 4,
-   "agradable": 4
+   "creatividad": 4,
+   "tranquilidad": 2,
+   "formalismo": 3,
+   "puntaje": 0
  },
  {
    "nombre": "Cuuc ",
@@ -49,12 +45,10 @@ var data =[
    "tiempo": "45 min a 1.5 horas",
    "zona": "Sur",
    "imagen": "cuuc.png",
-   "tradicional": 1,
-   "creativo": 2,
-   "animado": 3,
-   "tranquiilo": 3,
-   "barato": 3,
-   "agradable": 4
+   "creatividad": 1,
+   "tranquilidad": 3,
+   "formalismo": 3,
+   "puntaje": 0
  },
  {
    "nombre": "Macondo: Desserts & Coffee",
@@ -68,12 +62,10 @@ var data =[
    "tiempo": "",
    "zona": "Occidente",
    "imagen": "macondo.png",
-   "tradicional": 4,
-   "creativo": 3,
-   "animado": 2,
-   "tranquiilo": 4,
-   "barato": 2,
-   "agradable": 4
+   "creatividad": 4,
+   "tranquilidad": 4,
+   "formalismo": 2,
+   "puntaje": 0
  },
  {
    "nombre": "La Sevillana ",
@@ -87,12 +79,10 @@ var data =[
    "tiempo": "",
    "zona": "Sur ",
    "imagen": "sevillana.png",
-   "tradicional": 4,
-   "creativo": 1,
-   "animado": 2,
-   "tranquiilo": 3,
-   "barato": 2,
-   "agradable": 3
+   "creatividad": 4,
+   "tranquilidad": 3,
+   "formalismo": 2,
+   "puntaje": 0
  },
  {
    "nombre": "Cheers",
@@ -106,12 +96,10 @@ var data =[
    "tiempo": "",
    "zona": "Norte",
    "imagen": "cheer.png",
-   "tradicional": 2,
-   "creativo": 2,
-   "animado": 3,
-   "tranquiilo": 2,
-   "barato": 3,
-   "agradable": 4
+   "creatividad": 2,
+   "tranquilidad": 2,
+   "formalismo": 3,
+   "puntaje": 0
  },
  {
    "nombre": "Sushi Green",
@@ -125,12 +113,10 @@ var data =[
    "tiempo": "45 min a 2 horas",
    "zona": "Sur",
    "imagen": "sushi.png",
-   "tradicional": 2,
-   "creativo": 2,
-   "animado": 3,
-   "tranquiilo": 2,
-   "barato": 3,
-   "agradable": 4
+   "creatividad": 2,
+   "tranquilidad": 2,
+   "formalismo": 3,
+   "puntaje": 0
  },
  {
    "nombre": "Dominos Pizza",
@@ -144,12 +130,10 @@ var data =[
    "tiempo": "15 min a 1 hora",
    "zona": "Sur",
    "imagen": "domino.png",
-   "tradicional": null,
-   "creativo": null,
-   "animado": null,
-   "tranquiilo": null,
-   "barato": null,
-   "agradable": null
+   "creatividad": 5,
+   "tranquilidad": 2,
+   "formalismo": 5,
+   "puntaje": 0
  },
  {
    "nombre": "La Comitiva",
@@ -163,12 +147,10 @@ var data =[
    "tiempo": "1 a 2 horas",
    "zona": "Norte",
    "imagen": "comitiva.png",
-   "tradicional": 5,
-   "creativo": 2,
-   "animado": 1,
-   "tranquiilo": 4,
-   "barato": 3,
-   "agradable": 3
+   "creatividad": 5,
+   "tranquilidad": 4,
+   "formalismo": 1,
+   "puntaje": 0
  },
  {
    "nombre": "The Famous Absurdo",
@@ -182,11 +164,9 @@ var data =[
    "tiempo": "",
    "zona": "Sur",
    "imagen": "absurdo.png",
-   "tradicional": null,
-   "creativo": null,
-   "animado": null,
-   "tranquiilo": null,
-   "barato": null,
-   "agradable": null
+   "creatividad": 5,
+   "tranquilidad": 4,
+   "formalismo": 5,
+   "puntaje": 0
  }
 ]

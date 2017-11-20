@@ -1,9 +1,10 @@
+var puntajeTotal;
 var controller = function controller(vista, data) {
 
     view.closeAdd();
 
-    view.sumarPuntaje = function sumarPuntaje(puntajeGlobal) {
-
+    view.ordenar = function ordenar(puntajeGlobal) {
+        
         var Precio = puntajeGlobal.precio.value;
         var Cercania = puntajeGlobal.cercania.value;
         var Tranquilidad = puntajeGlobal.tranquilidad.value;
@@ -13,46 +14,41 @@ var controller = function controller(vista, data) {
         console.log(
             'Precio: ' + Precio +
             ' Cercania: ' + Cercania +
-            ' Creatividad: ' + Tranquilidad +
-            ' Tranquilidad: ' + Creatividad +
+            ' Creatividad: ' + Creatividad +
+            ' Tranquilidad: ' + Tranquilidad +
             ' Informalidad: ' + Informalidad
         )
 
-        var puntajeSumado = data.forEach(function (elemento) {
+        var sumar = data.forEach(function (elemento) {
+            elemento.puntaje = 0;
             
-            if (elemento.barato < Precio) {
-                console.log('Precio más barato');
-                elemento.ranking += 1;
+            if (elemento.creatividad < Precio) {
+                elemento.puntaje += 1;
             }
             
+            if (elemento.creatividad < Creatividad) {
+                elemento.puntaje += 1;
+            }            
             
-            if (elemento.creativo < Creatividad) {
-                console.log('Suma en creatividad');
-                elemento.ranking += 1;
+            if (elemento.tranquilidad < Tranquilidad) {
+                elemento.puntaje += 1;
+            }            
+            
+            if (elemento.formalismo < Informalidad) {
+                elemento.puntaje += 1;
             }
             
-            
-            if (elemento.tranquiilo < Tranquilidad) {
-                console.log('Suma en tranquilidad');
-                elemento.ranking += 1;
-            }
-            
-            
-            if (elemento.agradable < Informalidad) {
-                console.log('Suma en tranquilidad');
-                elemento.ranking += 1;
-            }
+            elemento.puntaje += elemento.ranking;
+
+            var puntajes = [];
+            puntajes= data.puntaje;
+            console.log(puntajes);
         });
-
-        // renderizamos con la variable librosFiltrados
-        view.render(puntajeSumado);
-    }
-
-    view.ordenar = function ordenar() {
+        
         var listaOrdenada = data
             .sort(function (a, b) {
-                return a.ranking > b.ranking;
-            }).reverse();
+                return a.puntaje < b.puntaje;
+            });
         view.render(listaOrdenada);
     }
 

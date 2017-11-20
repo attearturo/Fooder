@@ -229,24 +229,28 @@
     .sub {
         text-align: center;
         border: 3px solid white;
-        width: 200px;
+        width: 400px;
         margin: auto;
-
-
     }
+
+.titleHeader{
+   font-weight: bold;
+    font-size: 4em;
+}
 
 .recomendar{
     display: block;
     padding: 15px;
     border: none;
-    color: gray;
+    background-color: gray;
+    color: white;
     margin-top: 10px;
     font-size: 17pt;
     width: 100%;
 }
 
 .recomendar:hover{
-    background-color: dodgerblue;
+    background-color: black;
     color: white;
 }
 
@@ -308,6 +312,9 @@
     .main {
         image-resolution: snap;
         align-items: center;
+        transition-delay: 5s;
+        transition: 2s;
+        opacity: .5;
     }
 
     #byGenre {
@@ -337,6 +344,7 @@
     .form-control {
         margin-top: 7px;
     }
+    
 
     .resultados {
         text-align: center;
@@ -411,6 +419,8 @@
         text-decoration-skip: none;
     }
 
+.
+
     .modal-header .closeView {
         height: 50px;
         border: none;
@@ -480,7 +490,7 @@
         }
 
         .form-inline {
-            margin: 0px 80px 0px 80px;
+            margin: 0px 0px 0px 0px;
         }
 
     }
@@ -511,6 +521,8 @@
         padding: 0;
         margin: 0;
     }
+
+
 
     /* UL container elements */
 
