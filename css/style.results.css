@@ -372,7 +372,7 @@
         transition: .5s ease;
         opacity: 0;
         position: absolute;
-        top: 35%;
+        top: 15%;
         left: 50%;
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
@@ -387,19 +387,20 @@
         opacity: 1;
     }
 
+    
     .text {
+        border: none;
+        border-radius: 5px;
         font-size: 17px;
-        padding: 15px 10px;
+        padding: 30px;
 
     }
 
     .text:hover {
-        border: transparent;
-        color: none;
-        font-size: 17px;
-        padding: 15px 10px;
+        background-color: gray;
+        color: white;
         letter-spacing: 1.2;
-        transition: 1s;
+        transition: .5s;
         font-weight: bold;
     }
 
@@ -450,7 +451,7 @@
             height: 470px;
         }
         .middle {
-            top: 35%;
+            top: 15%;
         }
     }
 
@@ -467,7 +468,7 @@
         }
 
         .middle {
-            top: 45%;
+            top: 15%;
         }
 
         .modal-body .imagenMini {
@@ -482,7 +483,7 @@
             margin: 0px 50px 30px 50px;
         }
         .middle {
-            top: 43%;
+            top: 13%;
         }
 
         .modal {

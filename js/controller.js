@@ -1,8 +1,4 @@
-var puntajeTotal;
 var controller = function controller(vista, data) {
-
-    view.closeAdd();
-
     view.ordenar = function ordenar(puntajeGlobal) {
         
         var Precio = puntajeGlobal.precio.value;
