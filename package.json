@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/attearturo/Fooder#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "firebase": "^4.6.2"
   }
 }

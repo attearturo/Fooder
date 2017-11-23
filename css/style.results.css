@@ -27,10 +27,6 @@
         font-family: 'Poppins', sans-serif;
     }
 
-    .jumbotron {
-        /*height: 100vh;*/
-    }
-
     @keyframes animate {
         17% {
             border-bottom-right-radius: 3px;
@@ -61,8 +57,8 @@
     }
 
     .navegacion {
-        position: absolute;
-        width: 100%;
+        position: relative;
+        height: 50px;
         margin: 20px;
     }
 
@@ -84,6 +80,7 @@
     }
 
     li a {
+        font-size: 9pt;
         display: block;
         color: #c1c1c1;
         text-align: center;
@@ -171,47 +168,21 @@
         }
     }
 
-    @media (max-width: 991px) {
-        #top .offer .btn,
-        #top .tocadisco-offer,
-        #top .description-offer {
-            font-size: 14px;
-            text-align: center;
-        }
-    }
 
-    @media (max-width: 991px) {
-        #top .description-offer {
-            width: 100%;
-            height: 20px;
-            text-align: center;
-        }
-    }
-
-    @media (max-width: 991px) {
-        #top .offer .btn-success {
-            color: transparent !important;
-            visibility: hidden !important;
-            height: 0px;
-        }
-    }
-
-    @media (max-width: 991px) {
-        #top .tocadisco-offer {
-            width: 100%;
-            text-align: center;
-        }
+    .link,
+    .link--takiri:hover {
+        text-decoration: none;
     }
 
     .fondo {
         position: relative;
-        height: 100vh;
-        background-image: url("../img/blackBackground.jpg");
+        background-image: url("../img/fondo.jpg");
         background-size: cover;
         z-index: 2;
         opacity: 1;
         text-align: center;
-        padding-top: 420px;
+        margin: 10px 0px;
+        padding-top: 300px;
         font-family: 'Poppins', sans-serif;
         color: white;
         line-height: 0.5;
@@ -233,26 +204,27 @@
         margin: auto;
     }
 
-.titleHeader{
-   font-weight: bold;
-    font-size: 4em;
-}
+    .titleHeader {
+        font-weight: bold;
+        font-size: 4em;
+    }
 
-.recomendar{
-    display: block;
-    padding: 15px;
-    border: none;
-    background-color: gray;
-    color: white;
-    margin-top: 10px;
-    font-size: 17pt;
-    width: 100%;
-}
+    .recomendar {
+        display: block;
+        padding: 12px;
+        border: none;
+        font-weight: bold;
+        background-color: lightgray;
+        color: black;
+        margin-top: 10px;
+        font-size: 15pt;
+        width: 100%;
+    }
 
-.recomendar:hover{
-    background-color: black;
-    color: white;
-}
+    .recomendar:hover {
+        background-color: black;
+        color: white;
+    }
 
     .intro {
         position: relative;
@@ -267,10 +239,6 @@
         line-height: 1;
     }
 
-    p {
-
-        line-height: 1.2;
-    }
 
     .intro .info {
         position: absolute;
@@ -289,20 +257,6 @@
         text-align: left;
     }
 
-
-    @media (max-width: 990px) {
-        .fondo {
-            background-position: center;
-            position: relative;
-        }
-    }
-
-    .jumbotron {
-        font-family: 'Poppins', sans-serif;
-        margin: 00px 0px 0px 0px;
-        position: relative;
-    }
-
     .colorPrice {
         color: #5fc818;
         letter-spacing: 1.1;
@@ -310,6 +264,8 @@
     }
 
     .main {
+        display: grid;
+        padding-top: 20px;
         image-resolution: snap;
         align-items: center;
         transition-delay: 5s;
@@ -317,66 +273,29 @@
         opacity: .5;
     }
 
-    #byGenre {
-        width: 350px;
-    }
-
-    #byPrice {
-        width: 350px;
-    }
-
-    #agradable {
-        width: 350px;
-    }
-
-    #byFormat {
-        width: 350px;
-    }
-
-    #byObject {
-        width: 350px;
-    }
-
-    #byFood {
-        width: 350px;
-    }
-
     .form-control {
         margin-top: 7px;
+        width: 100%;
+        border-radius: 0px;
+        background-color: transparent;
+        color: lightgray;
+        transition: .3s;
     }
-    
+
+    .form-control:hover {
+        margin-left: 5px;
+        background-color: white;
+        color: gray;
+    }
 
     .resultados {
-        text-align: center;
-        color: gray;
-        margin-bottom: 30px;
-    }
-
-    .lista {
         font-family: 'Poppins', sans-serif;
-        line-height: 0.7;
-        height: 525px;
-        position: relative;
-    }
-
-
-    .imagen {
-        opacity: 1;
-        display: block;
-        height: auto;
-        transition: .5s ease;
-        backface-visibility: hidden;
-    }
-
-    .middle {
-        transition: .5s ease;
-        opacity: 0;
-        position: absolute;
-        top: 15%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-
+        text-align: left;
+        padding: 35px 0px 0px;
+        color: lightgray;
+        font-size: 16pt;
+        font-weight: bold;
+        line-height: .5px;
     }
 
     .lista:hover .imagen {
@@ -387,13 +306,12 @@
         opacity: 1;
     }
 
-    
+
     .text {
         border: none;
         border-radius: 5px;
         font-size: 17px;
         padding: 30px;
-
     }
 
     .text:hover {
@@ -404,26 +322,20 @@
         font-weight: bold;
     }
 
+    .modal .smooth {
+        margin: 0;
+    }
+
     .modal {
         font-family: 'Poppins', sans-serif;
     }
 
-    .modal-content {
-
-        height: 95%;
-    }
-
-    .modal-header {
-        padding: 40px;
-        text-align: center;
-        text-decoration-style: none;
-        text-decoration-skip: none;
-    }
-
-.
-
-    .modal-header .closeView {
+    .closeView {
         height: 50px;
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        float: right;
         border: none;
         background: none;
         font-size: 40;
@@ -434,7 +346,15 @@
     }
 
     .modal-body {
-        height: 100%;
+        padding: 50px;
+        background: white;
+        opacity: .95;
+        font-size: 1.3em;
+    }
+
+
+    .modal .tilter {
+        margin: 0 auto;
     }
 
     .line {
@@ -446,13 +366,85 @@
         padding-top: 10px;
     }
 
-    @media (max-width: 1170px) {
-        .lista {
-            height: 470px;
+    #copyright p {
+        margin: 0;
+    }
+
+    .pequeno {
+        margin: auto;
+    }
+
+
+    .jumbotron {
+        font-family: 'Poppins', sans-serif;
+        margin: 00px 0px 0px 0px;
+        position: relative;
+    }
+
+    header.jumbotron.container {
+        background: none;
+        padding: 20px 30px;
+        color: lightgray;
+    }
+
+    .tilter {
+        width: 100%;
+        height: 335px;
+    }
+
+    .tilter__caption {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 3em;
+    }
+
+    .tilter__title {
+        font-size: 2.8em;
+    }
+
+    .tilter__description {
+        margin: 0em 0 0 0;
+        font-size: 10pt;
+        letter-spacing: 0.15em;
+    }
+
+    .content {
+        padding: 0;
+    }
+
+    .jumbotron p {
+        line-height: 1.25;
+        font-size: 13pt;
+    }
+
+    .jumbotron h5 {
+        font-weight: bold;
+    }
+
+    #precio,
+    #creatividad,
+    #zona,
+    #comida,
+    #tranquilidad,
+    #informalidad {
+        width: 100%;
+    }
+
+    .link,
+    .link--takiri {
+        padding: 0;
+    }
+
+    @media (max-width: 1200px) {
+        .tilter {
+            width: 100%;
+            height: 275px;
+            padding: 0;
+            display: inline-grid;
+            padding: 0;
         }
-        .middle {
-            top: 15%;
-        }
+
     }
 
     @media (max-width: 991px) {
@@ -461,39 +453,75 @@
             text-align: center;
             margin-bottom: 10px;
         }
-
-        .lista {
-            margin: 0px 100px 30px 100px;
-            height: auto;
-        }
-
-        .middle {
-            top: 15%;
-        }
-
         .modal-body .imagenMini {
             display: none;
+        }
+        .tilter {
+            width: 100%;
+            height: 385px;
+            padding: 0;
+            display: inline-grid;
+            padding: 0;
+        }
+
+        .tilter__caption {
+            padding: 5em;
+        }
+
+        .tilter__title {
+            font-size: 3.4em;
+        }
+
+        .tilter__description {
+            font-size: 12pt;
         }
 
     }
 
-
     @media (max-width: 768px) {
-        .lista {
-            margin: 0px 50px 30px 50px;
-        }
-        .middle {
-            top: 13%;
-        }
-
-        .modal {
-            margin: 10% 10%;
-        }
-
         .form-inline {
             margin: 0px 0px 0px 0px;
         }
 
+        .tilter {
+            width: 100%;
+            height: 330px;
+            margin: 25px 0px;
+        }
+
+        .tilter__caption {
+            padding: 5em;
+        }
+
+        .tilter__title {
+            font-size: 2.5em;
+        }
+
+        .tilter__description {
+            font-size: 9pt;
+        }
+    }
+
+    @media (max-width: 575px) {
+
+        .tilter {
+            width: 100%;
+            height: 250px;
+            margin: 10px 0px;
+
+        }
+        .tilter__caption {
+            padding: 6em 3em;
+
+        }
+
+        .tilter__title {
+            font-size: 2.4em;
+        }
+
+        .tilter__description {
+            font-size: 9pt;
+        }
     }
 
     @-webkit-keyframes aparece {
@@ -503,39 +531,4 @@
         to {
             opacity: 1;
         }
-    }
-
-    #copyright p {
-        margin: 0;
-    }
-
-    .pequeno {
-        margin: auto;
-    }
-
-    /* Default setup */
-
-    .radio,
-    .checkbox,
-    .checkbox-toggle {
-        display: inline-block;
-        padding: 0;
-        margin: 0;
-    }
-
-
-
-    /* UL container elements */
-
-    ul.radio,
-    ul.checkbox {
-        display: block;
-        list-style: none;
-    }
-
-    ul.radio.horizontal > li,
-    ul.checkbox.horizontal > li {
-        display: inline-block;
-        padding-top: 0;
-        margin-right: .5em;
     }

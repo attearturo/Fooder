@@ -7,206 +7,69 @@ var puntajeGlobal = {
         comida: "",
     };
 
-    
 var view = {
     
-    activarEstiloLista: function activarEstiloLista(){
-			var tiltSettings = [
-			{},
-			{
-				movement: {
-					imgWrapper : {
-						translation : {x: 10, y: 10, z: 30},
-						rotation : {x: 0, y: -10, z: 0},
-						reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
-					},
-					lines : {
-						translation : {x: 10, y: 10, z: [0,70]},
-						rotation : {x: 0, y: 0, z: -2},
-						reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
-					},
-					caption : {
-						rotation : {x: 0, y: 0, z: 2},
-						reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
-					},
-					overlay : {
-						translation : {x: 10, y: -10, z: 0},
-						rotation : {x: 0, y: 0, z: 2},
-						reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
-					},
-					shine : {
-						translation : {x: 100, y: 100, z: 0},
-						reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
-					}
-				}
-			},
-			{
-				movement: {
-					imgWrapper : {
-						rotation : {x: -5, y: 10, z: 0},
-						reverseAnimation : {duration : 900, easing : 'easeOutCubic'}
-					},
-					caption : {
-						translation : {x: 30, y: 30, z: [0,40]},
-						rotation : {x: [0,15], y: 0, z: 0},
-						reverseAnimation : {duration : 1200, easing : 'easeOutExpo'}
-					},
-					overlay : {
-						translation : {x: 10, y: 10, z: [0,20]},
-						reverseAnimation : {duration : 1000, easing : 'easeOutExpo'}
-					},
-					shine : {
-						translation : {x: 100, y: 100, z: 0},
-						reverseAnimation : {duration : 900, easing : 'easeOutCubic'}
-					}
-				}
-			},
-			{
-				movement: {
-					imgWrapper : {
-						rotation : {x: -5, y: 10, z: 0},
-						reverseAnimation : {duration : 50, easing : 'easeOutQuad'}
-					},
-					caption : {
-						translation : {x: 20, y: 20, z: 0},
-						reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
-					},
-					overlay : {
-						translation : {x: 5, y: -5, z: 0},
-						rotation : {x: 0, y: 0, z: 6},
-						reverseAnimation : {duration : 1000, easing : 'easeOutQuad'}
-					},
-					shine : {
-						translation : {x: 50, y: 50, z: 0},
-						reverseAnimation : {duration : 50, easing : 'easeOutQuad'}
-					}
-				}
-			},
-			{
-				movement: {
-					imgWrapper : {
-						translation : {x: 0, y: -8, z: 0},
-						rotation : {x: 3, y: 3, z: 0},
-						reverseAnimation : {duration : 1200, easing : 'easeOutExpo'}
-					},
-					lines : {
-						translation : {x: 15, y: 15, z: [0,15]},
-						reverseAnimation : {duration : 1200, easing : 'easeOutExpo'}
-					},
-					overlay : {
-						translation : {x: 0, y: 8, z: 0},
-						reverseAnimation : {duration : 600, easing : 'easeOutExpo'}
-					},
-					caption : {
-						translation : {x: 10, y: -15, z: 0},
-						reverseAnimation : {duration : 900, easing : 'easeOutExpo'}
-					},
-					shine : {
-						translation : {x: 50, y: 50, z: 0},
-						reverseAnimation : {duration : 1200, easing : 'easeOutExpo'}
-					}
-				}
-			},
-			{
-				movement: {
-					lines : {
-						translation : {x: -5, y: 5, z: 0},
-						reverseAnimation : {duration : 1000, easing : 'easeOutExpo'}
-					},
-					caption : {
-						translation : {x: 15, y: 15, z: 0},
-						rotation : {x: 0, y: 0, z: 3},
-						reverseAnimation : {duration : 1500, easing : 'easeOutElastic', elasticity : 700}
-					},
-					overlay : {
-						translation : {x: 15, y: -15, z: 0},
-						reverseAnimation : {duration : 500,easing : 'easeOutExpo'}
-					},
-					shine : {
-						translation : {x: 50, y: 50, z: 0},
-						reverseAnimation : {duration : 500, easing : 'easeOutExpo'}
-					}
-				}
-			},
-			{
-				movement: {
-					imgWrapper : {
-						translation : {x: 5, y: 5, z: 0},
-						reverseAnimation : {duration : 800, easing : 'easeOutQuart'}
-					},
-					caption : {
-						translation : {x: 10, y: 10, z: [0,50]},
-						reverseAnimation : {duration : 1000, easing : 'easeOutQuart'}
-					},
-					shine : {
-						translation : {x: 50, y: 50, z: 0},
-						reverseAnimation : {duration : 800, easing : 'easeOutQuart'}
-					}
-				}
-			},
-			{
-				movement: {
-					lines : {
-						translation : {x: 40, y: 40, z: 0},
-						reverseAnimation : {duration : 1500, easing : 'easeOutElastic'}
-					},
-					caption : {
-						translation : {x: 20, y: 20, z: 0},
-						rotation : {x: 0, y: 0, z: -5},
-						reverseAnimation : {duration : 1000, easing : 'easeOutExpo'}
-					},
-					overlay : {
-						translation : {x: -30, y: -30, z: 0},
-						rotation : {x: 0, y: 0, z: 3},
-						reverseAnimation : {duration : 750, easing : 'easeOutExpo'}
-					},
-					shine : {
-						translation : {x: 100, y: 100, z: 0},
-						reverseAnimation : {duration : 750, easing : 'easeOutExpo'}
-					}
-				}
-			}];
-
-			function init() {
-				var idx = 0;
-				[].slice.call(document.querySelectorAll('a.tilter')).forEach(function(el, pos) { 
-					idx = pos%2 === 0 ? idx+1 : idx;
-					new TiltFx(el, tiltSettings[idx-1]);
-				});
-			}
-
-			// Preload all images.
-			imagesLoaded(document.querySelector('main'), function() {
-				document.body.classList.remove('loading');
-				init();
-			});
+    sincronizarFirebase: function sincronizarFirebase() {
+        const config = {
+            apiKey: "AIzaSyDmFoDExbaLNWePwLQ1pGsyhl3_kh46efA",
+            authDomain: "fooderhci.firebaseapp.com",
+            databaseURL: "https://fooderhci.firebaseio.com",
+            projectId: "fooderhci",
+            storageBucket: "fooderhci.appspot.com",
+            messagingSenderId: "832312219816"
+          };
+        
+          firebase.initializeApp(config);
+          
+        const preferenciasOnline = firebase.database().ref().child('preferencias');
+                preferenciasOnline.on('value', snap =>
+                console.log(snap.val())
+                );
     },
+
+    estiloLista: function getElemVinilo(estiloLista) {
+        
+			var tiltSettings = [
+                {},];
     
+                function init() {
+                    var idx = 0;
+                    [].slice.call(document.querySelectorAll('a.tilter')).forEach(function(el, pos) { 
+                        idx = pos%2 === 0 ? idx+1 : idx;
+                        new TiltFx(el, tiltSettings[idx-1]);
+                    });
+                }
+    
+                // Preload all images.
+                imagesLoaded(document.querySelector('main'), function() {
+                    document.body.classList.remove('loading');
+                    init();
+                });
+    },
 
     // genera cada oferta extrayendo sus datos del Modelo
     getElemVinilo: function getElemVinilo(infoVinilo) {
         var div = document.createElement('div');
-        div.setAttribute('class', 'backgroundLista col-md-4');
+        div.setAttribute('class', 'col-md-4 col-sm-6 col-xs-6');
         div.innerHTML = `
-
-        <main>
-			<section class="content content--c1">
-				<a href="#" class="tilter tilter--1">
-					<figure class="tilter__figure">
-						<img class="tilter__image" src="restaurantes/${infoVinilo.imagen}" alt="img01" />
-						<div class="tilter__deco tilter__deco--shine"><div></div></div>
-						<figcaption class="tilter__caption">
-							<h3 class="tilter__title">${infoVinilo.nombre}</h3>
-							<p class="tilter__description">${infoVinilo.zona}</p>
-						</figcaption>
-						<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
-							<path d="M20.5,20.5h260v375h-260V20.5z" />
-						</svg>
-					</figure>
-				</a>
-			</section>
-		</main>
-
+        <main class="smooth">
+        <section class="content content--c1">
+        <a href="#" class="tilter tilter--1">
+            <figure class="tilter__figure">
+                <img class="tilter__image" src="restaurantes/${infoVinilo.imagen}" alt="img01" />
+                <div class="tilter__deco tilter__deco--shine"><div></div></div>
+                <figcaption class="tilter__caption">
+                    <h3 class="tilter__title">${infoVinilo.nombre}</h3>
+                    <p class="tilter__description"><String>Ranking ${infoVinilo.ranking}</String></p>
+                    <p class="tilter__description">${infoVinilo.zona}</p>
+                </figcaption>
+                <svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
+                    <path d="M20.5,20.5h260v375h-260V20.5z" />
+                </svg>
+            </figure>
+        </a>
+        </section>
+        </main>
 		`;
         var that = this;
 
@@ -220,42 +83,60 @@ var view = {
     getModalVinilo: function getModalVinilo(infoVinilo) {
         var div = document.createElement('div');
         div.innerHTML = `
-        <div class='modal-backdrop fade'></div>
-    
+<div class='modal-backdrop fade'></div>
     <div class='modal fade' tabindex='-1' role='dialog'>
         <div class='modal-dialog' role='document'>
-            <div class='modal-content'>
+            
+            <main class="smooth">
+                <section class="content content--c1">
+                    <a href="#" class="tilter tilter--1">
+                        <figure class="tilter__figure">
+                            <img class="tilter__image" src="restaurantes/${infoVinilo.imagen}" alt="img01" />
+                            <div class="tilter__deco tilter__deco--shine">
+                                <div>
 
-                <div class='modal-header'>
-                    <button type='button' class='closeView' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-                    <h3 class='title'>${infoVinilo.nombre}</h3>             
-                    <h4 class="colorPrice">Precio Promedio<strong>$ ${infoVinilo.precio}00</strong></h4>  
-                </div>
+                                </div>
+                            </div>
+                            <figcaption class="tilter__caption">
+                                <h3 class="tilter__title">${infoVinilo.nombre}</h3>
+                                <p class="tilter__description"><String>Ranking ${infoVinilo.ranking}</String></p>
+                                <p class="tilter__description">${infoVinilo.zona}</p>
+                            </figcaption>
+                            <button type='button' class='closeView' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                        </figure>
+                    </a>
+                </section>
+            </main>
 
-                <div class='modal-body'>
-                    <div class='col-md-12'>
-                        <img class="imagen " style="width:100%" src="restaurantes/${ infoVinilo.imagen = null ? "predeterminado.png" : infoVinilo.imagen }" class="img-responsive" />
+            <div class='modal-body'>
+                    <h5><Strong>Detalles</Strong></h5>
+                    <p>${infoVinilo.descripcion}</p>
+                    <div class='line'>
+                        <p>Precio promedio:
+                            <Strong>$${infoVinilo.precio}00</Strong>
+                        </p>
+                        <p>Dirección:
+                            <Strong>${infoVinilo.direccion}</Strong>
+                        </p>
+                        <p>Telefonos:
+                            <Strong>${infoVinilo.phone}</Strong>
+                        </p>
+                        <p>Tiempo promedio de estadia:
+                            <Strong>${infoVinilo.tiempo}</Strong>
+                        </p>
                     </div>
-
-                    <div class='col-md-12'>
-                        <br><p><Strong>Detalles</Strong>
-                        </p><p>${infoVinilo.descripcion}</p>
-
-                        <div class='line'>                       
-                        <p>Dirección: <Strong>${infoVinilo.direccion}</Strong></p>
-                        <p>Telefonos: <Strong>${infoVinilo.phone}</Strong></p>
-                        <p>Tiempo promedio de estadia: <Strong>${infoVinilo.tiempo}</Strong></p>
-                        </div>
-                        <p>Especialidad: <Strong>${infoVinilo.especialidad}</Strong></p>
-                        <div class='col-md-6'>
-                        <img class="imagenMini" style="width:100%" src="restaurantes/${ infoVinilo.imagen = null ? "predeterminado.png" : infoVinilo.imagen }" class="img-responsive" />
-                    </div>
-                    </div>
-                </div>
+                    <p>Especialidad:
+                        <Strong>${infoVinilo.especialidad}</Strong>
+                    </p>                    
             </div>
         </div>
     </div>
+        
     `;
+        
+//        <div class='hey col-md-6'>
+//                        <img class="imagenMini" style="width:100%" src="restaurantes/${ infoVinilo.imagen = null ? " predeterminado.png " : infoVinilo.imagen }" class="img-responsive" />
+//                    </div>
 
         var modal = div.querySelector('.modal');
         var backdrop = div.querySelector('.modal-backdrop');
@@ -278,7 +159,6 @@ var view = {
         modal.addEventListener('click', function (e) {
             if (e.target === modal) remove();
         });
-
         div.querySelector('button').addEventListener('click', remove);
         return div;
     },
@@ -286,7 +166,7 @@ var view = {
     // muestra en tiempo real la cantidad de resultados antes y despues de aplicar filtros
     getResults: function getResults(listaVinilos) {
         var div = document.createElement('div');
-        div.setAttribute('class', 'col-md-12');
+        div.setAttribute('class', 'col-md-9');
         div.innerHTML = `
         <div class="resultados">
 			<p>${listaVinilos.length} resultados</p>
@@ -297,7 +177,7 @@ var view = {
 
     getElemVinilos: function getElemVinilos(listaVinilos) {
         var div = document.createElement('div');
-        div.setAttribute('class', 'row');
+        div.setAttribute('class', 'col-md-9');
 
         var that = this;
         listaVinilos.forEach(function (infoVinilo) {
@@ -311,7 +191,6 @@ var view = {
     setHeaderEvents: function setHeaderEvents() {
         
         var that = this; 
-
         var header = document.querySelector('header');
         puntajeGlobal.precio = header.querySelector('#precio');
         puntajeGlobal.zona = header.querySelector('#zona');
@@ -327,19 +206,66 @@ var view = {
         });
         
     },
+    
+    getFooder: function getFooder(){
+        var div = document.createElement('div');
+        div.innerHTML = `
+
+        <footer class="footer-distributed">
+            <div class="footer-left">
+                <span><img src='img/logoSmall.png'></span>
+                <p class="footer-links">
+                    <a href="#">Nuestra tienda</a>
+                    <a href="#">Colección</a>
+                    <a href="#">Ofertas</a>
+                    <p class="footer-company-name">Fooder &copy; 2017</p>
+            </div>
+            <div class="footer-center">
+                <div><i class="fa fa-map-marker"></i>
+                    <p><span>Universidad Icesi</span> Cali, Colombia</p>
+                </div>
+                <div><i class="fa fa-phone"></i>
+                    <p>+1 555 123456</p>
+                </div>
+
+                <div><i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">contact@vyny.com</a></p>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>Sobre Fooder</span>Nuestra selección de vinilos y tocadiscos con nuevas características, nuevos lanzamientos, UO-ediciones exclusivas y los re-estrenos que todos hemos estado esperando.
+                </p>
+                <div class="footer-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+       `;
+        return div;
+    },
 
     render: function render(listaVinilos) {
+        
+        this.sincronizarFirebase();
+        
         var main = document.getElementById('main');
         main.setAttribute('class', 'container');
-
         var elemVinilos = this.getElemVinilos(listaVinilos);
-
         var tamLista = this.getResults(listaVinilos);
 
         main.innerHTML = '';
         main.appendChild(tamLista);
         main.appendChild(elemVinilos);
+        this.estiloLista();
         
-    this.activarEstiloLista();
+        
+        var fooderTag = document.getElementById('fooderPag');
+        var fooder = this.getFooder();
+        fooderTag.innerHTML = '';
+        fooderTag.appendChild(fooder);
     }
 };
