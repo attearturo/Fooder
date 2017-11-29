@@ -26,51 +26,9 @@ var puntajeLocal = {
         messagingSenderId: "832312219816"
     };
 
-<<<<<<< HEAD
     firebase.initializeApp(config);
 }());
 var view = {
-=======
-var view = {
-    
-    sincronizarFirebase: function sincronizarFirebase() {
-        const config = {
-            apiKey: "AIzaSyDmFoDExbaLNWePwLQ1pGsyhl3_kh46efA",
-            authDomain: "fooderhci.firebaseapp.com",
-            databaseURL: "https://fooderhci.firebaseio.com",
-            projectId: "fooderhci",
-            storageBucket: "fooderhci.appspot.com",
-            messagingSenderId: "832312219816"
-          };
-        
-          firebase.initializeApp(config);
-          
-        const preferenciasOnline = firebase.database().ref().child('preferencias');
-                preferenciasOnline.on('value', snap =>
-                console.log(snap.val())
-                );
-    },
-
-    estiloLista: function getElemVinilo(estiloLista) {
-        
-			var tiltSettings = [
-                {},];
-    
-                function init() {
-                    var idx = 0;
-                    [].slice.call(document.querySelectorAll('a.tilter')).forEach(function(el, pos) { 
-                        idx = pos%2 === 0 ? idx+1 : idx;
-                        new TiltFx(el, tiltSettings[idx-1]);
-                    });
-                }
-    
-                // Preload all images.
-                imagesLoaded(document.querySelector('main'), function() {
-                    document.body.classList.remove('loading');
-                    init();
-                });
-    },
->>>>>>> 11b7e4bb89205f32b4c5ba0aa777a981b35fdcb6
 
     estiloLista: function getElemVinilo(estiloLista) {
 
@@ -100,11 +58,7 @@ var view = {
         <section class="content content--c1">
         <a href="#" class="tilter tilter--1">
             <figure class="tilter__figure">
-<<<<<<< HEAD
-                <img class="tilter__image" src="restaurantes/${infoVinilo.mini}" alt="img01" />
-=======
                 <img class="tilter__image" src="restaurantes/${infoVinilo.imagen}" alt="img01" />
->>>>>>> 11b7e4bb89205f32b4c5ba0aa777a981b35fdcb6
                 <div class="tilter__deco tilter__deco--shine"><div></div></div>
                 <figcaption class="tilter__caption">
                     <h3 class="tilter__title">${infoVinilo.nombre}</h3>
@@ -114,10 +68,6 @@ var view = {
                 <svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
                     <path d="M20.5,20.5h260v375h-260V20.5z" />
                 </svg>
-<<<<<<< HEAD
-
-=======
->>>>>>> 11b7e4bb89205f32b4c5ba0aa777a981b35fdcb6
             </figure>
         </a>
         </section>
@@ -184,10 +134,6 @@ var view = {
     </div>
         
     `;
-        
-//        <div class='hey col-md-6'>
-//                        <img class="imagenMini" style="width:100%" src="restaurantes/${ infoVinilo.imagen = null ? " predeterminado.png " : infoVinilo.imagen }" class="img-responsive" />
-//                    </div>
 
         //        <div class='hey col-md-6'>
         //                        <img class="imagenMini" style="width:100%" src="restaurantes/${ infoVinilo.imagen = null ? " predeterminado.png " : infoVinilo.imagen }" class="img-responsive" />
@@ -223,7 +169,7 @@ var view = {
         div.setAttribute('class', 'col-md-9');
         div.innerHTML = `
         <div class="resultados">
-			<p>De los primeras cinco ¿A cuales irías?${listaVinilos.length}</p>
+			<p>${listaVinilos.length} resultados</p>
         </div>
 		`;
         return div;
@@ -241,26 +187,22 @@ var view = {
         return div;
     },
     setHeaderEvents: function setHeaderEvents() {
-<<<<<<< HEAD
         var that = this;
-=======
-        
-        var that = this; 
->>>>>>> 11b7e4bb89205f32b4c5ba0aa777a981b35fdcb6
         var header = document.querySelector('header');
 
-        
-        that.ordenar(puntajeGlobal);
-//
-//        puntajeGlobal.sala = header.querySelector('#sala').value;
-//        puntajeGlobal.precio = header.querySelector('#precio').value;
-//        puntajeGlobal.zona = header.querySelector('#zona').value;
-//        puntajeGlobal.creatividad = header.querySelector('#creatividad').value;
-//        puntajeGlobal.tranquilidad = header.querySelector('#tranquilidad').value;
-//        puntajeGlobal.informalidad = header.querySelector('#informalidad').value;
-//        puntajeGlobal.comida = header.querySelector('#comida').value;
-
         puntajeGlobal = this.sincronizarFirebase();
+        that.ordenar(puntajeGlobal);
+
+        puntajeLocal.sala = header.querySelector('#sala').value;
+        puntajeLocal.precio = header.querySelector('#precio').value;
+        puntajeLocal.zona = header.querySelector('#zona').value;
+        puntajeGlobal.creatividad = header.querySelector('#creatividad').value;
+        puntajeLocal.tranquilidad = header.querySelector('#tranquilidad').value;
+        puntajeLocal.informalidad = header.querySelector('#informalidad').value;
+        puntajeLocal.comida = header.querySelector('#comida').value;
+
+
+
         var btnRecomendar = header.querySelector('.recomendar');
         btnRecomendar.addEventListener('click', function () {
 
@@ -273,7 +215,6 @@ var view = {
                 header.querySelector('#comida').value);
 
             console.log("Local" + header.querySelector('#sala').value);
-            
             console.log(puntajeGlobal);
             that.ordenar(puntajeGlobal);
         });
@@ -286,24 +227,13 @@ var view = {
         revisarSala.on('value', snap =>
             console.log(snap.val())
         );
-        
-        firebase.database().ref().child('preferencias').child('Usuario').set({
-                    sala: sala,
-                    precio: precio,
-                    zona: zona,
-                    tranquilidad: tranquilidad,
-                    informalidad: informalidad,
-                    creatividad: creatividad,
-                    comida: comida,
-                });
-        
 //        revisarSala.forEach(function (salas) {
 //            if (sala.includes(revisarSala.sala)) {
 //                console.log('repetida');
 //                
 //            } else {
 //                console.log(revisarSala.sala);
-//                firebase.database().ref().child('preferencias').child('Usuario').set({
+//                firebase.database().ref().child('preferencias').child('Sala ' + sala).set({
 //                    sala: sala,
 //                    precio: precio,
 //                    zona: zona,
@@ -357,62 +287,15 @@ var view = {
         return div;
     },
     sincronizarFirebase: function sincronizarFirebase() {
-        const dbPreferencias = firebase.database().ref().child('preferencias').child('Usuario');
+        const dbPreferencias = firebase.database().ref().child('preferencias').child('usuario');
 
         dbPreferencias.on('value', snap =>
             puntajeGlobal = snap.val());
         return puntajeGlobal;
     },
-    
-    getFooder: function getFooder(){
-        var div = document.createElement('div');
-        div.innerHTML = `
-
-        <footer class="footer-distributed">
-            <div class="footer-left">
-                <span><img src='img/logoSmall.png'></span>
-                <p class="footer-links">
-                    <a href="#">Nuestra tienda</a>
-                    <a href="#">Colección</a>
-                    <a href="#">Ofertas</a>
-                    <p class="footer-company-name">Fooder &copy; 2017</p>
-            </div>
-            <div class="footer-center">
-                <div><i class="fa fa-map-marker"></i>
-                    <p><span>Universidad Icesi</span> Cali, Colombia</p>
-                </div>
-                <div><i class="fa fa-phone"></i>
-                    <p>+1 555 123456</p>
-                </div>
-
-                <div><i class="fa fa-envelope"></i>
-                    <p><a href="mailto:support@company.com">contact@vyny.com</a></p>
-                </div>
-            </div>
-
-            <div class="footer-right">
-                <p class="footer-company-about">
-                    <span>Sobre Fooder</span>Nuestra selección de vinilos y tocadiscos con nuevas características, nuevos lanzamientos, UO-ediciones exclusivas y los re-estrenos que todos hemos estado esperando.
-                </p>
-                <div class="footer-icons">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                </div>
-            </div>
-        </footer>
-       `;
-        return div;
-    },
 
     render: function render(listaVinilos) {
-<<<<<<< HEAD
 
-=======
-        
-        this.sincronizarFirebase();
-        
->>>>>>> 11b7e4bb89205f32b4c5ba0aa777a981b35fdcb6
         var main = document.getElementById('main');
         main.setAttribute('class', 'container');
         var elemVinilos = this.getElemVinilos(listaVinilos);
@@ -422,13 +305,8 @@ var view = {
         main.appendChild(tamLista);
         main.appendChild(elemVinilos);
         this.estiloLista();
-<<<<<<< HEAD
 
 
-=======
-        
-        
->>>>>>> 11b7e4bb89205f32b4c5ba0aa777a981b35fdcb6
         var fooderTag = document.getElementById('fooderPag');
         var fooder = this.getFooder();
         fooderTag.innerHTML = '';
